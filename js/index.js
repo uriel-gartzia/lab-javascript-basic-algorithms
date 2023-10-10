@@ -82,4 +82,42 @@ console.log( etCounter )
 
 // 2
 
-let phaseToCheck
+let phraseToCheck = 'Algún valor en string';
+let phraseToCheckReversed = '';
+let phraseToCheckWithoutSpaces = '';
+
+// 1º le quitamos los espacios
+for ( let i = 0; i < phraseToCheck.length; i++) {
+    if ( phraseToCheck[i] === ' ' ) {
+        continue;
+    } else {
+        phraseToCheckWithoutSpaces += phraseToCheck[i];
+    }
+}
+
+console.log( phraseToCheckWithoutSpaces )
+
+// 2º Ahora le damos la vuelta
+
+for ( let i = phraseToCheckWithoutSpaces.length - 1; i >= 0; i--) {
+    phraseToCheckReversed += phraseToCheckWithoutSpaces[i]
+}
+
+console.log( phraseToCheckReversed )
+
+// 3º Ahora los ponemos todo en minúsculas
+
+phraseLowercase1 = phraseToCheckWithoutSpaces.toLowerCase()
+
+console.log( phraseLowercase1 )
+
+phraseLowercase2 = phraseToCheckReversed.toLowerCase()
+
+console.log( phraseLowercase2 )
+
+// 4º Ahora los comparamos
+
+if ( phraseLowercase1 === phraseLowercase2 ) {
+    console.log( 'Is a palindrome!' )
+} else if ( phraseLowercase1 !== phraseLowercase2 )
+    console.log( 'Is not a palidrome! ')
